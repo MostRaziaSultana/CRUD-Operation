@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+
+{% block title %} Profile Create {% endblock %}
+ {% block search %}
+ {% endblock %}
+{% block body %}
+
+<div class="container">
+ <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+   <div class="form-group">
+     <label for="exampleInputEmail1">Name</label>
+     <input type="Text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" name="name">
+   </div>
+
+   <div class="form-group">
+     <label for="exampleInputEmail1">email</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+   </div>
+
+    <div class="form-group">
+       <label for="image">image:</label>
+        <input type="file" name="image" id="image">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">address</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address" name="address">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">number</label>
+     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number" name="number">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">age</label>
+     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Age" name="age">
+   </div>
+
+      <div class="form-group">
+         <label for="exampleInputEmail1">gender</label>
+         <select name="gender">
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>>
+           <option value="Others">Others</option>>
+         </select>>
+     </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">religion</label>
+          <select name="religion">
+           <option value="Islam">Islam</option>
+           <option value="Hindu">Hindu</option>>
+         </select>>
+
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">division</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Division" name="division">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">color</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Color" name="color">
+   </div>
+     <br>
+     <br>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+</div>
+
+
+{% endblock %}

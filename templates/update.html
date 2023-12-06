@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% block title %} Profile Update{% endblock %}
+ {% block search %}
+ {% endblock %}
+{% block body %}
+
+<div class="container">
+ <form method="POST" enctype="multipart/form-data">
+     {% csrf_token %}
+   <div class="form-group">
+
+     <label>Name</label>
+     <input type="Text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" value="{{prof.name}}" name="name">
+   </div>
+
+   <div class="form-group">
+      <label for="exampleInputEmail1">email</label>
+     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" value="{{prof.email}}" name="email">
+   </div>
+
+    <div class="form-group">
+        <img style="height:200px,width:200px" src="{{prof.image.url}}" alt="">
+       <label for="image">image:</label>
+        <input type="file" name="image" id="image">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">address</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address" value="{{prof.address}}" name="address">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">number</label>
+     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Number" value="{{prof.number}}" name="number">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">age</label>
+     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Age" value="{{prof.age}}" name="age">
+   </div>
+
+      <div class="form-group">
+         <label for="exampleInputEmail1">gender</label>
+         <select name="gender">
+              <option value="{{prof.gender}}">{{prof.gender}}</option>
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>
+           <option value="Others">Others</option>
+         </select>>
+     </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">religion</label>
+          <select name="religion">
+               <option value="{{prof.religion}}">{{prof.religion}}</option>
+           <option value="Islam">Islam</option>
+           <option value="Hindu">Hindu</option>
+         </select>>
+
+     </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">division</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Division" value="{{prof.division}}" name="division">
+   </div>
+
+      <div class="form-group">
+     <label for="exampleInputEmail1">color</label>
+     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Color" value="{{prof.color}}" name="color">
+   </div>
+     <br>
+     <br>
+   <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+</div>
+
+
+{% endblock %}
